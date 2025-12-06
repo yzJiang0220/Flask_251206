@@ -4,12 +4,11 @@ from bs4 import BeautifulSoup
 
 app = Flask("JobScraper")
 
-# 1. 봇이 아닌 척 위장하는 '가면' (헤더)
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
-# 2. 사이트별 스크래핑
+# 사이트별 스크래핑
 
 def get_wwr(term):
     # WeWorkRemotely
@@ -71,7 +70,7 @@ def get_berlin(term):
     except:
         return []
 
-# 3. 웹사이트 주소 연결
+# 웹사이트 주소 연결
 
 @app.route("/")
 def home():
